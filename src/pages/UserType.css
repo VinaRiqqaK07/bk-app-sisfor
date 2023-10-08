@@ -1,0 +1,15 @@
+.user-type-button {
+    height: 190px;
+    width: 180px;
+}
+
+.user-type-button img {
+    height: 60%;
+    width: 50%;
+}
+
+h1 {
+    align-content: center;
+    align-items: center;
+    align-self: center;
+}
