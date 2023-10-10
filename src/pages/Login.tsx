@@ -1,13 +1,26 @@
 import { IonButton, IonCard, IonCardContent, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { logInOutline, personCircleOutline } from 'ionicons/icons';
-import BKlogo from '../assets/BK-logo.jpg'
+import BKlogo from '../assets/BK-logo.jpg';
+import Intro from '../components/Intro';
 const Login: React.FC = () => {
+    const [introSeen, setIntroSeen] = useState(false);
+
     const doLogin = (event: any) => {
         event.preventDefault();
         console.log('doLogin');
     };
+
+    const finishIntro = async() => {
+        console.log('FIN');
+        setIntroSeen(true);
+    };
+
     return (
+        <>
+        {!introSeen ? (
+            <Intro onFinish={finishIntro}/>
+        ) : (
         <IonPage>
             <IonHeader>
                 <IonToolbar color={'primary'}>
@@ -34,14 +47,17 @@ const Login: React.FC = () => {
                                 <IonIcon icon={personCircleOutline} slot='end'></IonIcon>
                             </IonButton> 
                         </form>
-                    </IonCardContent>
+                    </IonCardContent> 
                 </IonCard> 
             </IonContent>
             <IonFooter>
                 
             </IonFooter>
         </IonPage>
+        )}
+        </>
     );
 };
 
 export default Login;
+
