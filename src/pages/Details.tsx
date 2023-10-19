@@ -1,3 +1,4 @@
+import React from 'react';
 import { 
     IonBackButton,
     IonButtons,
@@ -6,20 +7,11 @@ import {
     IonPage, 
     IonTitle, 
     IonToolbar } from '@ionic/react';
+import Detail from '../components/Detail/Details';
 
 const Details: React.FC = () => {
     return(
-        <IonPage>
-            <IonHeader>
-                <IonToolbar color="primary">
-                    <IonButtons slot='start'>
-                        <IonBackButton defaultHref='/app/Home' />
-                    </IonButtons >
-                    <IonTitle>My Details</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent className='ion-padding'></IonContent>
-        </IonPage>
+        <Detail />
     )
 }  
- export default Details
+ export default Details;

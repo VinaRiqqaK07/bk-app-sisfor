@@ -1,22 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import React from 'react';
+import HomeDashboard from '../components/Home/HomeDashboard';
 
 const Home: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar color='warning'>
-          <IonTitle>Blink</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        helloworld
-        <ExploreContainer />
-      </IonContent>
-    </IonPage>
+    <HomeDashboard />
   );
 };
 
 export default Home;
- 
