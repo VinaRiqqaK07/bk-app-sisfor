@@ -2,8 +2,8 @@ import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonText
 import React from 'react';
 import { Swiper, SwiperSlide, useSwiper} from 'swiper/react';
 import 'swiper/css';
-import Intro1Jpg from '../assets/Intro/intro1.jpg';
-import Intro2Svg from '../assets/Intro/Intro2.svg';
+import Intro1Jpg from '../../assets/Intro/intro1.jpg';
+import Intro2Svg from '../../assets/Intro/Intro2.svg';
 import './Intro.css';
 
 interface ContainerProps {
