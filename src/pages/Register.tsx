@@ -1,19 +1,9 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
+import RegisterForm from '../components/Register/RegisterForm';
 
 const Register: React.FC = () => {
-
     return (
-        <IonPage>
-            <IonHeader>
-                <IonToolbar>
-                    <IonTitle>Register Page</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-            <IonContent className="ion-padding">
-                UI goes here...
-            </IonContent>
-        </IonPage>
+        <RegisterForm />
     );
 };
 
