@@ -5,6 +5,7 @@ import { homeOutline, newspaperOutline, logOutOutline, settingsOutline } from 'i
 import Home from '../../pages/Home';
 import Setting from '../../pages/Setting';
 import Details from '../../pages/Details';
+import NewsComponent from '../News/News';
 import './Menu.css'
 
 const Menu: React.FC = () => {
@@ -12,7 +13,7 @@ const Menu: React.FC = () => {
   const paths = [
     { name: 'Home', url: '/app/home', icon: homeOutline },
     { name: 'Setting', url: '/app/setting', icon: settingsOutline },
-    { name: 'Details', url: '/app/home/details', icon: newspaperOutline}
+    { name: 'News', url: '/app/news', icon: newspaperOutline}
   ];
   return (
       <IonPage>
@@ -48,6 +49,7 @@ const Menu: React.FC = () => {
         <IonRouterOutlet id='main'>
             <Route exact path='/app/home' component={Home} />
             <Route path='/app/setting' component={Setting} />
+            <Route path='/app/news' component={NewsComponent} />
             <Route path='/app/home/details' component={Details} />
             <Route exact path='/app'>
               <Redirect to='/app/home' />

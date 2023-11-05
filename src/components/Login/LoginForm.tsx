@@ -56,7 +56,7 @@ const LoginForm: React.FC = () => {
                     </IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent scrollY={false} className='ion-padding'>
+            <IonContent scrollY={true} className='ion-padding'>
                 <IonGrid fixed>
                     <IonRow class='ion-justify-content-center'>
                         <IonCol size='12' sizeMd='8' sizeLg='6' sizeXl='6'>
