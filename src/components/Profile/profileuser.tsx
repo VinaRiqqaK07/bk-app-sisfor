@@ -24,7 +24,7 @@ const ProfileUser: React.FC = ()=> {
          <div className='pic-header'>
                         <img className='cover-pic' src='https://ionicframework.com/docs/img/demos/card-media.png' alt='Cover Picture'/>
                     </div>
-         <div className="card"> 
+         <> 
              <div className="header">
                      <img src={BKlogo} alt=''/>
             <div className='hm'>
@@ -32,7 +32,7 @@ const ProfileUser: React.FC = ()=> {
             </div>
                 <h1 className='univ'>Imperial Star University</h1>
              </div>
-         </div>
+         </>
         <IonList inset={true} className='datadiri'>
             <div>
           <IonItem>

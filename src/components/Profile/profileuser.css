@@ -5,8 +5,7 @@
 }
 .pic-header{
     width: 100%;
-    height: 35%;
-}
+   }
 .header {
     align-items: center;
     justify-content: center;
@@ -14,15 +13,12 @@
     display: flex;
     flex-direction: column;
     margin-top: 180px;
+    margin-bottom: -75px;
 }
 
-.card {
-    width: auto;
-    height: 60px;
-}
 .header img{
     border-radius: 50%;
-    margin-top: -400px;
+    margin-top: -300px;
     width: 100px;
     height: 100px;
 }

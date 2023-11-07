@@ -7,7 +7,6 @@ import Register from './pages/Register';
 import Menu from './components/Menu/Menu';
 import Setting from './pages/Setting';
 import Profile  from './components/Profile/profileuser';
-import TestProfile from './components/tesnewprofile/testprofile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -43,7 +42,6 @@ const App: React.FC = () => (
         </Route>
         <Route component={Register} path="/register" exact />
         <Route component={Menu} path="/app" />
-        <Route component={TestProfile} path="/testprofile" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
