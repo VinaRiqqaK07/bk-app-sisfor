@@ -21,7 +21,7 @@ const UserType: React.FC = () => {
                     <IonRow class='ion-justify-content-center ion-align-items-center ion-padding'>
                         <IonButton routerLink='/register' className='user-type-button' color={'light'}>
                             <IonCol>
-                                <img src={TeacherIcon}/>
+                                <img src={TeacherIcon} alt=''/>
                                 <IonText>
                                     <h3>Dosen</h3>
                                 </IonText>
@@ -29,7 +29,7 @@ const UserType: React.FC = () => {
                         </IonButton>
                         <IonButton routerLink='/register' className='user-type-button' color={'light'}>
                             <IonCol>
-                                <img src={StudentIcon}/>
+                                <img src={StudentIcon} alt=''/>
                                 <IonText>
                                     <h3>Mahasiswa</h3>
                                 </IonText>

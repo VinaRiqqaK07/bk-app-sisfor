@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Menu from './components/Menu/Menu';
 import Setting from './pages/Setting';
-
+import Profile  from './components/Profile/profileuser';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
