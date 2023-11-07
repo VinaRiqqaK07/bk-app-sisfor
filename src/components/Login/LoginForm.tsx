@@ -67,7 +67,7 @@ const LoginForm: React.FC = () => {
                     </IonRow>
                     <IonRow class='ion-justify-content-center'>
                         <IonCol size='12' sizeMd='8' sizeLg='6' sizeXl='4'>
-                            <IonCard>
+                            <IonCard className='card'>
                                 <IonCardContent>
                                     <div className='ion-text-center ion-margin-vertical ion-padding-bottom'>
                                         <IonText color={'dark'}>
