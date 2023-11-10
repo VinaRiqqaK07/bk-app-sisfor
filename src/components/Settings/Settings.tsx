@@ -1,6 +1,7 @@
 import { IonButton, IonButtons, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { alertCircleOutline, callOutline, chatbubblesOutline, chevronForwardOutline, helpCircleOutline, lockClosedOutline, logOutOutline, mailOutline, personCircleOutline } from 'ionicons/icons';
 import React from 'react';
+import { handleLogout } from '../Login/LoginForm';
 import './Settings.css'
 
 const Settings: React.FC = () => {
@@ -66,7 +67,7 @@ const Settings: React.FC = () => {
             <IonCard className='ion-margin-vertical'>
                 <IonCardContent>
                     <IonList>
-                    <IonItem button={true} lines='none' routerLink='/'
+                    <IonItem onClick={handleLogout} button={true} lines='none' routerLink='/'
                 routerDirection='root' id='logout-alert'>
                         <IonIcon icon={logOutOutline} slot='start'></IonIcon>
                         <IonLabel>Logout</IonLabel>

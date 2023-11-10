@@ -7,11 +7,24 @@ import { Preferences } from '@capacitor/preferences';
 import './LoginForm.css'
 
 const INTRO_KEY = 'intro-seen';
+export const USER_KEY = 'user-type';
+
+export const removeUserType = () => {
+    Preferences.remove({ key: USER_KEY });
+  };
+
+export const handleLogout = () => {
+    removeUserType();
+  };
 
 const LoginForm: React.FC = () => {
     const router = useIonRouter();
     const [introSeen, setIntroSeen] = useState(true);
     const [present, dismiss] = useIonLoading();
+    const [userID, setUserID] = useState('');
+    const[userPass, setUserPass] = useState('');
+    const[userType, setUserType] = useState('');
+
     
 
     useEffect(() => {
@@ -25,6 +38,21 @@ const LoginForm: React.FC = () => {
 
     const doLogin = async (event: any) => {
         event.preventDefault();
+        
+        if(userID==='admin'){
+            setUserType('admin');
+            Preferences.set({ key: USER_KEY, value: 'admin'});
+        }else if(userID==='dosen'){
+            setUserType('dosen');
+            Preferences.set({ key: USER_KEY, value: 'dosen'});
+        }else if(userID==='mahasiswa'){
+            setUserType('mahasiswa');
+            Preferences.set({ key: USER_KEY, value: 'mahasiswa'});
+        }else{
+            setUserType('admin');
+            Preferences.set({ key: USER_KEY, value: 'admin'});
+        }
+        
         await present('Logging in...');
         setTimeout(async () => {
             dismiss();
@@ -75,8 +103,8 @@ const LoginForm: React.FC = () => {
                                         </IonText>
                                     </div>
                                     <form onSubmit={doLogin}>
-                                        <IonInput fill='outline' labelPlacement='floating' label="User ID" type='text' placeholder='NIM/NIP' className='ion-margin-top'></IonInput>
-                                        <IonInput fill='outline' labelPlacement='floating' label='Password' type='password' className='ion-margin-vertical'></IonInput>
+                                        <IonInput onIonInput={(e: any) => setUserID(e.target.value)} fill='outline' labelPlacement='floating' label="User ID" type='text' placeholder='NIM/NIP' className='ion-margin-top'></IonInput>
+                                        <IonInput onIonInput={(e: any) => setUserPass(e.target.value)} fill='outline' labelPlacement='floating' label='Password' type='password' className='ion-margin-vertical'></IonInput>
                                         <IonButton type='submit' color={'secondary'} expand='block' className='ion-margin-top' >
                                             Login
                                             <IonIcon icon={logInOutline} slot='end'></IonIcon>

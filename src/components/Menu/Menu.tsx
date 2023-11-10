@@ -2,12 +2,14 @@ import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { IonButton, IonContent, IonHeader, IonIcon, IonItem, IonMenu, IonMenuToggle, IonPage, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar } from '@ionic/react';
 import { homeOutline, newspaperOutline, logOutOutline, settingsOutline, personCircleOutline } from 'ionicons/icons';
+import { Preferences } from '@capacitor/preferences';
 import Home from '../../pages/Home';
 import Setting from '../../pages/Setting';
 import Details from '../../pages/Details';
 import NewsComponent from '../News/News';
 import './Menu.css'
 import Profile from '../../pages/Profile';
+import { handleLogout } from '../Login/LoginForm';
 
 const Menu: React.FC = () => {
 
@@ -37,6 +39,7 @@ const Menu: React.FC = () => {
             ))}
             <IonMenuToggle autoHide={false}>
               <IonButton
+                onClick={handleLogout}
                 routerLink='/'
                 routerDirection='root'
                 expand='full'
