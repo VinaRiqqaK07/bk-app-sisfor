@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { alertCircleOutline, callOutline, chatbubblesOutline, chevronForwardOutline, helpCircleOutline, lockClosedOutline, logOutOutline, mailOutline, personCircleOutline } from 'ionicons/icons';
 import React from 'react';
 import './Settings.css'
@@ -10,8 +10,8 @@ const Settings: React.FC = () => {
             <IonHeader>
                 <IonToolbar color={'primary'}>
                     <IonButtons slot='start'>
-                        <IonMenuButton />
-                    </IonButtons>
+                        <IonBackButton defaultHref='/app/profile' />
+                    </IonButtons >
                     <IonTitle className='ion-text-center'>Setting</IonTitle>
                 </IonToolbar>    
             </IonHeader> 
