@@ -1,10 +1,10 @@
 import { IonAvatar, IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import BKLogo from '../../assets/BK-logo.jpg';
-import './Settings.css';
+import './SettingCon.css';
 import { chevronForwardOutline, lockClosed, logInOutline, notificationsCircle, person, personCircleOutline } from 'ionicons/icons';
 
-const Settings: React.FC = () => {
+const SettingCon: React.FC = () => {
     const [activeButton, setActiveButton] = useState('account');
     const [toggleState, setToggleState] = useState(false);
 
@@ -89,7 +89,7 @@ const Settings: React.FC = () => {
                         {activeButton === 'password' && (
                             <IonList>
                             <IonItem lines='none' className='ion-margin-bottom'>
-                                    <IonIcon size='large' icon={lockClosed} slot='start'></IonIcon>
+                                    <IonIcon icon={lockClosed} slot='start'></IonIcon>
                                     <IonLabel>Change Password</IonLabel>
                                 </IonItem>
                                 <IonItem className='ion-margin-bottom' lines='none'>
@@ -117,7 +117,7 @@ const Settings: React.FC = () => {
                         {activeButton === 'notification' && (
                             <IonList>
                                 <IonItem lines='none'>
-                                    <IonIcon size='large' icon={notificationsCircle} slot='start'></IonIcon>
+                                    <IonIcon icon={notificationsCircle} slot='start'></IonIcon>
                                     <IonLabel>Notifications</IonLabel>
                                 </IonItem>
                                 <IonItem lines='none'>
@@ -165,4 +165,4 @@ const Settings: React.FC = () => {
     );
 };
 
-export default Settings;
+export default SettingCon;
