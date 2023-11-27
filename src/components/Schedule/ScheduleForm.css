@@ -1,0 +1,24 @@
+ion-header {
+    background-color: #3880ff; 
+  }
+  
+  ion-title {
+    color: #ffffff; 
+  }
+  
+  ion-content {
+    padding: 20px; 
+  }
+  
+  ion-label {
+    font-weight: bold; 
+  }
+  
+  ion-item {
+    margin-bottom: 16px; 
+  }
+  
+  ion-button {
+    margin-top: 16px; 
+  }
+  
