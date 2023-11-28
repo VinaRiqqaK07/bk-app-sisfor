@@ -44,7 +44,6 @@ const Menu: React.FC = () => {
             ))}
             <IonMenuToggle autoHide={false}>
               <IonButton
-                onClick={handleLogout}
                 routerLink='/'
                 routerDirection='root'
                 expand='full'

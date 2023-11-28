@@ -28,11 +28,7 @@
     width: 100px;
     height: 100px;
 }
-<<<<<<< HEAD
-.IonContent {
-=======
 ion-content {
->>>>>>> c5aabdb5184016e956a08b25882a1ec6fc38b6bd
     background: url(/bk-app-sisfor/src/assets/BK-logo.jpg) no-repeat top center/cover fixed, #fff;
     position: relative;
     height: 100%;
@@ -40,11 +36,7 @@ ion-content {
 }
 
 .title {
-<<<<<<< HEAD
-    color: black;
-=======
     color: #fff;
->>>>>>> c5aabdb5184016e956a08b25882a1ec6fc38b6bd
 }
 
 .card {
@@ -72,11 +64,8 @@ ion-content {
     font-size:medium;
     margin-bottom: -20px;
 }
-<<<<<<< HEAD
-=======
 
 .button-setting {
     background-color: none;
     
 }
->>>>>>> c5aabdb5184016e956a08b25882a1ec6fc38b6bd
