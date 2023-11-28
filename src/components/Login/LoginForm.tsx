@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardContent, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonInput, IonPage, IonRow, IonText, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
+import { InputChangeEventDetail, IonButton, IonCard, IonCardContent, IonCol, IonContent, IonFooter, IonGrid, IonHeader, IonIcon, IonInput, IonPage, IonRow, IonText, IonTitle, IonToolbar, useIonLoading, useIonRouter } from '@ionic/react';
 import { logInOutline, personCircleOutline } from 'ionicons/icons';
 import React, { useEffect, useState } from 'react';
 import BKlogo from '../../assets/BK-logo.jpg';
@@ -7,52 +7,38 @@ import { Preferences } from '@capacitor/preferences';
 import './LoginForm.css'
 
 const INTRO_KEY = 'intro-seen';
-export const USER_KEY = 'user-type';
-
-export const removeUserType = () => {
-    Preferences.remove({ key: USER_KEY });
-  };
-
-export const handleLogout = () => {
-    removeUserType();
-  };
+const USER_KEY = 'user-type';
 
 const LoginForm: React.FC = () => {
     const router = useIonRouter();
     const [introSeen, setIntroSeen] = useState(true);
     const [present, dismiss] = useIonLoading();
-    const [userID, setUserID] = useState('');
-    const[userPass, setUserPass] = useState('');
-    const[userType, setUserType] = useState('');
-
+    const [userID, setUser] = useState('');
+    const [password, setPass] = useState('');
     
 
     useEffect(() => {
         const checkStorage = async () => {
             const seen = await Preferences.get({ key: INTRO_KEY });
-            console.log('~file: LoginForm.tsx:16 ~ checkStorage ~ seen:', seen);
+            const usertype = await Preferences.get({ key: USER_KEY });
+            console.log('~file: LoginForm.tsx ~ checkStorage ~ seen:', seen);
+            console.log('~file: LoginForm.tsx ~ checkStorage ~ user type:', usertype);
             setIntroSeen(seen.value === 'true');
+            if(usertype.value==='admin'){
+                setUser('admin');
+            }else if(usertype.value==='dosen'){
+                setUser('dosen');
+            }else if(usertype.value==='mahasiswa'){
+                setUser('mahasiswa');
+            }else{
+                setUser('admin');
+            }
         }
         checkStorage();
     }, []);
 
     const doLogin = async (event: any) => {
         event.preventDefault();
-        
-        if(userID==='admin'){
-            setUserType('admin');
-            Preferences.set({ key: USER_KEY, value: 'admin'});
-        }else if(userID==='dosen'){
-            setUserType('dosen');
-            Preferences.set({ key: USER_KEY, value: 'dosen'});
-        }else if(userID==='mahasiswa'){
-            setUserType('mahasiswa');
-            Preferences.set({ key: USER_KEY, value: 'mahasiswa'});
-        }else{
-            setUserType('admin');
-            Preferences.set({ key: USER_KEY, value: 'admin'});
-        }
-        
         await present('Logging in...');
         setTimeout(async () => {
             dismiss();
@@ -69,6 +55,30 @@ const LoginForm: React.FC = () => {
     const seeIntroAgain = () => {
         setIntroSeen(false);
         Preferences.remove({ key: INTRO_KEY });
+    };
+
+    const handleInputChange = (event: CustomEvent<InputChangeEventDetail>) => {
+        console.log("Handle Input is working..");
+        const inputElement = event.target as HTMLInputElement;
+        const setInputChange = async () => {
+            if (event.target) {
+                const user = inputElement.value;
+                console.log("Handle input change, user : ", user);
+                setUser(inputElement.value);
+                if(user==='admin'){
+                    await Preferences.set({ key: USER_KEY, value: 'admin'});
+                }else if(user==='dosen'){
+                    await Preferences.set({ key: USER_KEY, value: 'dosen'});
+                }else if(user==='mahasiswa'){
+                    await Preferences.set({ key: USER_KEY, value: 'mahasiswa'});
+                }else{
+                    await Preferences.set({ key: USER_KEY, value: 'admin'});
+                }
+            }else{
+                console.log('null value');
+            }
+        }
+        setInputChange();
     };
     
     return (
@@ -103,8 +113,8 @@ const LoginForm: React.FC = () => {
                                         </IonText>
                                     </div>
                                     <form onSubmit={doLogin}>
-                                        <IonInput onIonInput={(e: any) => setUserID(e.target.value)} fill='outline' labelPlacement='floating' label="User ID" type='text' placeholder='NIM/NIP' className='ion-margin-top'></IonInput>
-                                        <IonInput onIonInput={(e: any) => setUserPass(e.target.value)} fill='outline' labelPlacement='floating' label='Password' type='password' className='ion-margin-vertical'></IonInput>
+                                        <IonInput onIonChange={handleInputChange} value={userID} fill='outline' labelPlacement='floating' label="User ID" type='text' placeholder='NIM/NIP' className='ion-margin-top'></IonInput>
+                                        <IonInput value={password} fill='outline' labelPlacement='floating' label='Password' type='password' className='ion-margin-vertical'></IonInput>
                                         <IonButton type='submit' color={'secondary'} expand='block' className='ion-margin-top' >
                                             Login
                                             <IonIcon icon={logInOutline} slot='end'></IonIcon>

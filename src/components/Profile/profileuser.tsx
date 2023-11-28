@@ -6,21 +6,27 @@ import { homeOutline, settingsOutline, personCircleSharp, chevronForwardOutline,
 
 
 const ProfileUser: React.FC = ()=> {
+
+  const goToSetting = () => {
+    window.location.href='/app/profile/setting'
+  };
+  
  return (
     <><IonHeader translucent no-border className='head'>
-         <IonToolbar className='tool'color={'primary'}>
+      <IonToolbar className='tool'color={'primary'}>
           <IonButtons slot='start'>
-                        <IonMenuButton />
-                    </IonButtons>
-        <IonTitle color="aqua" className='title'>Profile
-        </IonTitle>
-         <IonButton slot='end' className='button'>
-            <IonIcon icon={settingsOutline}>
+            <IonMenuButton />
+          </IonButtons>
+        <IonTitle color="aqua" className='title'>Profile</IonTitle>
+        <IonButtons slot='end' className='ion-margin-end' onClick={goToSetting}>
+          <IonButton >
+            <IonIcon slot='icon-only' icon={settingsOutline}>
             </IonIcon>
-            </IonButton >
-         </IonToolbar>
+          </IonButton >
+        </IonButtons>
+      </IonToolbar>
      </IonHeader>
-         <IonContent color="light">
+      <IonContent color="light">
          <div className='pic-header'>
                         <img className='cover-pic' src='https://ionicframework.com/docs/img/demos/card-media.png' alt='Cover Picture'/>
                     </div>

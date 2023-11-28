@@ -1,8 +1,8 @@
-import { IonAvatar, IonButton, IonButtons, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonCard, IonCardContent, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import { alertCircleOutline, callOutline, chatbubblesOutline, chevronForwardOutline, helpCircleOutline, lockClosed, lockClosedOutline, logOutOutline, mailOutline, notificationsCircle, person, personCircleOutline } from 'ionicons/icons';
 import React, { useState } from 'react';
-import BKLogo from '../../assets/BK-logo.jpg';
 import './Settings.css';
-import { chevronForwardOutline, lockClosed, logInOutline, notificationsCircle, person, personCircleOutline } from 'ionicons/icons';
+import BKLogo from '../../assets/BK-logo.jpg'
 
 const Settings: React.FC = () => {
     const [activeButton, setActiveButton] = useState('account');
@@ -17,8 +17,8 @@ const Settings: React.FC = () => {
             <IonHeader>
                 <IonToolbar color={'primary'}>
                     <IonButtons slot='start'>
-                        <IonMenuButton />
-                    </IonButtons>
+                        <IonBackButton defaultHref='/app/profile' />
+                    </IonButtons >
                     <IonTitle className='ion-text-center'>Setting</IonTitle>
                 </IonToolbar>    
             </IonHeader>
