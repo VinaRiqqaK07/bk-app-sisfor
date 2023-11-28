@@ -9,8 +9,4 @@ const News: React.FC = () => {
     );
 };
 
-<<<<<<< HEAD
 export default News;
-=======
-export default News;
->>>>>>> c5aabdb5184016e956a08b25882a1ec6fc38b6bd
