@@ -11,8 +11,4 @@ const Profile: React.FC = () => {
     );
 };
 
-<<<<<<< HEAD
 export default Profile;
-=======
-export default Profile;
->>>>>>> c5aabdb5184016e956a08b25882a1ec6fc38b6bd
