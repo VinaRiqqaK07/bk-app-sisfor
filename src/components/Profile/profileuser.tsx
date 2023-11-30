@@ -29,7 +29,7 @@ const ProfileUser: React.FC = ()=> {
       <IonContent color="light">
          <div className='pic-header'>
                         <img className='cover-pic' src='https://ionicframework.com/docs/img/demos/card-media.png' alt='Cover Picture'/>
-                    </div>
+          </div>
          <> 
              <div className="header">
                      <img src={BKlogo} alt=''/>

@@ -25,8 +25,7 @@ const Menu: React.FC = () => {
   ];
   
   return (
-    <IonPage>
-        <IonSplitPane contentId='main'>
+    <>
         <IonMenu contentId='main'>
           <IonHeader>
             <IonToolbar>
@@ -66,8 +65,7 @@ const Menu: React.FC = () => {
               <Redirect to='/app/home' />
             </Route>
         </IonRouterOutlet>
-        </IonSplitPane>
-      </IonPage>
+      </>
   );
 };
 
