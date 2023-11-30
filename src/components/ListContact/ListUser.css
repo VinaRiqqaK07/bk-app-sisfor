@@ -4,3 +4,22 @@
     color: #fff;
     text-align: center;
 }
+ 
+ .h1 {
+    margin-top: 25px;
+    margin-bottom: 60px;
+ }
+ 
+.confirm {
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.cancel {
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.list {
+    margin-left: 10px;
+}
